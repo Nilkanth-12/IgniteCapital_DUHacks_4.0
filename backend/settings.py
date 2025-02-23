@@ -13,3 +13,8 @@ DATABASES = {
         }
     }
 }
+
+MONGO_CLIENT = MongoClient("mongodb://localhost:27017/")  # Update if using cloud DB
+MONGO_DB = MONGO_CLIENT["ignitecapital"]  # Change to your actual MongoDB database name
+ALLOWED_HOSTS = ['*']  
+DEBUG = True

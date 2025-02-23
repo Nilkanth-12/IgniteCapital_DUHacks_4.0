@@ -20,3 +20,11 @@ def main():
 
 if __name__ == '__main__':
     main()
+from django.conf import settings
+
+mongo_db = getattr(settings, "MONGO_DB", None)  # Fetch MongoDB instance safely
+
+if mongo_db:
+    print(mongo_db.list_collection_names())  # List collections
+else:
+    print("MongoDB is not configured properly.")
