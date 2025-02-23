@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up - IgniteCapital</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #000000, #2c3e50);
+    color: #fff;
+}
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.LOG {
+    margin-left: auto;
+}
+
+/* Login & Signup Page */
+.auth-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #000000, #2c3e50);
+    margin-top: 60px;
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    border: 1px solid #fff;
+}
+
+.form-box h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.input-group label {
+    color: #fff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #c0392b;
+}
+
+.switch {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.switch a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>IgniteCapital</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#startups">Startups</a></li>
+                    <li><a href="index.html#investors">Investors</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="login_signup.html" class="LOG">Login</a></li>
+                    <li><a href="login_signup.html" class="LOG">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login & Signup Section -->
+    <div class="auth-container">
+        <div class="form-box">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p class="switch">Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+            </form>
+        </div>
+
+        <div class="form-box hidden" id="signup-form">
+            <h2>Sign Up</h2>
+            <form action="#">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" required>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <p class="switch">Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 IgniteCapital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Form Switching -->
+    <script>
+        function toggleForm() {
+            document.querySelector('.form-box').classList.toggle('hidden');
+            document.getElementById('signup-form').classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>
